@@ -9,12 +9,13 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-             <form action="{{ route('siswa.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf 
+            <form action="{{ route('siswa.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
 
                 <div class="form-group">
                     <label for="nama_siswa">Nama Siswa</label>
-                    <input type="text" name="nama_siswa" class="form-control @error('nama_siswa') is-invalid @enderror" id="nama_siswa" required value="{{ old('nama_siswa') }}">
+                    <input type="text" name="nama_siswa" class="form-control @error('nama_siswa') is-invalid @enderror"
+                        id="nama_siswa" required value="{{ old('nama_siswa') }}">
                     @error('nama_siswa')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -24,7 +25,8 @@
 
                 <div class="form-group">
                     <label for="nis">NIS</label>
-                    <input type="text" name="nis" class="form-control @error('nis') is-invalid @enderror" id="nis" required value="{{ old('nis') }}">
+                    <input type="text" name="nis" class="form-control @error('nis') is-invalid @enderror"
+                        id="nis" required value="{{ old('nis') }}">
                     @error('nis')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -34,7 +36,8 @@
 
                 <div class="form-group">
                     <label for="jurusan">Jurusan</label>
-                    <input type="text" name="jurusan" class="form-control @error('jurusan') is-invalid @enderror" id="jurusan" required placeholder="Contoh: Rekayasa Perangkat Lunak" value="{{ old('jurusan') }}">
+                    <input type="text" name="jurusan" class="form-control @error('jurusan') is-invalid @enderror"
+                        id="jurusan" required placeholder="Contoh: Rekayasa Perangkat Lunak" value="{{ old('jurusan') }}">
                     @error('jurusan')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -44,7 +47,8 @@
 
                 <div class="form-group">
                     <label for="kelas">Kelas</label>
-                    <input type="text" name="kelas" class="form-control @error('kelas') is-invalid @enderror" id="kelas" required placeholder="Contoh: 12-RPL-A" value="{{ old('kelas') }}">
+                    <input type="text" name="kelas" class="form-control @error('kelas') is-invalid @enderror"
+                        id="kelas" required placeholder="Contoh: 12-RPL-A" value="{{ old('kelas') }}">
                     @error('kelas')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -54,9 +58,22 @@
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" value="{{ old('email') }}">
+                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
+                        id="email" value="{{ old('email') }}">
                     @error('email')
                         <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="foto">Foto</label>
+                    <input type="file" name="foto" class="form-control-file @error('foto') is-invalid @enderror"
+                        id="foto" accept="image/*">
+                    <small class="form-text form-muted">Format: JPG, JPEG, PNG. Maksimal 2MB.</small>
+                    @error('foto')
+                        <span class="text-danger" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
