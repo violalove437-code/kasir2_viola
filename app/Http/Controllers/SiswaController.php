@@ -99,7 +99,7 @@ class SiswaController extends Controller
     {
         $siswa = Siswa::all();
 
-        $pdf = Pdf::loadView('siswa.pdf', compact('siswa'));
+        $pdf = pdf::loadView('siswa.pdf', compact('siswa'));
 
         return $pdf->stream('daftar-siswa.pdf');
     }
