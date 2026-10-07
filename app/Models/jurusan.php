@@ -3,12 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\HasFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class jurusan extends Model
 {
     use HasFactory;
-    protected $table = 'jurusan';
+    protected $table = 'jurusans';
     protected $fillable = 
     [
         'kode_jurusan',
