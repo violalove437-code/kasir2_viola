@@ -28,7 +28,7 @@ class JurusanController extends Controller
      */
     public function create()
     {
-        return view('jurusan.create');
+    
     }
 
     /**
@@ -37,17 +37,7 @@ class JurusanController extends Controller
     public function store(Request $request)
     {
         // Validasi sekaligus simpan hasilnya ke variabel $data
-        $data = $request->validate([
-            'nama_jurusan' =>'required|string|max:255',
-            'kode_jurusan' => 'required|string|unique:jurusan|max:20',
-            'keterangan'   => 'required|string|max:200',
-            'status'       => 'required|enum|max:50',
-        ]);
-
-        Jurusan::create($data);
-        return redirect()
-        ->route('jurusan.index')
-        ->with('succes', 'Jurusan berhasil ditambahkan.');
+        
     }
 
     /**
@@ -55,7 +45,7 @@ class JurusanController extends Controller
      */
     public function show(Jurusan $jurusan)
     {
-        return view('jurusan.show', compact('jurusan'));
+       
     }
 
     /**
@@ -63,7 +53,7 @@ class JurusanController extends Controller
      */
     public function edit(Jurusan $jurusan)
     {
-        return view('jurusan.edit', compact('jurusan'));
+        
     }
 
     /**
@@ -72,12 +62,7 @@ class JurusanController extends Controller
     public function update(Request $request, Jurusan $jurusan)
     {
          // Validasi data
-        $data = $request->validate([
-            'nama_jurusan'        => 'required|string|max:255',
-            'kode_jurusan'        => 'required|string|max:20|unique:jurusans,kode_jurusan,'.$jurusan->id, 
-            'keterangan'          => 'required|string|max:100',
-            'status'              => 'required|enum|max:50',
-        ]);
+       
     }
 
     /**
@@ -85,7 +70,6 @@ class JurusanController extends Controller
      */
     public function destroy(Jurusan $jurusan)
     {
-        $jurusan->delete();
-        return redirect()->route('jurusan.index')->with('succes', 'Data jurusan berhasil dihapus.');
+       
     }
 }
