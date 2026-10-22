@@ -1,0 +1,14 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Jenjang extends Model
+{
+     protected $table = 'jurusans';
+    protected $fillable = [
+        'nama_jenjang',
+        'keterangan',
+    ];
+}
