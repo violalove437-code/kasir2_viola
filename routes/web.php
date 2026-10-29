@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\JenjangController;
+use App\Http\Controllers\KelasController;
+use App\Http\Controllers\GuruController;
+
 
 
 Route::get('/', function () {
@@ -23,6 +26,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/siswa/cetak-pdf', [SiswaController::class, 'cetakPdf'])->name('siswa.cetak-pdf');
     Route::resource('jurusan',JurusanController::class);
     Route::resource('jenjang',JenjangController::class);
+    Route::resource('kelas',KelasController::class);
+    Route::resource('guru',GuruController::class);
+
 });
 
 require __DIR__ . '/auth.php';
