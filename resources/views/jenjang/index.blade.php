@@ -65,11 +65,11 @@
                                 {{-- Tombol Aksi disinkronkan stylenya (btn-sm, icon only) --}}
                                 <a class="btn btn-info btn-sm" href="{{ route('jenjang.show', $jenjang->id) }}"
                                     title="Lihat">
-                                    <i class="fas fa-eye"></i>
+                                    <i class="bi bi-eye"></i>
                                 </a>
                                 <a href="{{ route('jenjang.edit', $jenjang->id) }}" class="btn btn-warning btn-sm"
                                     title="Edit">
-                                    <i class="fas fa-edit"></i>
+                                    <i class="bi bi-pencil-square"></i>
                                 </a>
                                 <form action="{{ route('jenjang.destroy', $jenjang->id) }}" method="POST"
                                     style="display: inline-block;">
@@ -78,7 +78,7 @@
                                     <button type="submit" class="btn btn-danger btn-sm"
                                         onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"
                                         title="Hapus">
-                                        <i class="fas fa-trash"></i>
+                                        <i class="bi bi-trash"></i>
                                     </button>
                                 </form>
                             </td>

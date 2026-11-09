@@ -26,7 +26,7 @@
                 <div class="form-group">
                     <label for="jurusan">Keterangan</label>
                     <input type="text" name="keterangan" class="form-control @error('keterangan') is-invalid @enderror"
-                        id="keterangan" required placeholder="Contoh: Rekayasa Perangkat Lunak"
+                        id="keterangan" required placeholder=""
                         value="{{ old('keterangan') }}">
                     @error('keterangan')
                         <span class="invalid-feedback" role="alert">
